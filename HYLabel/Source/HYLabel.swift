@@ -104,7 +104,8 @@ public class HYLabel: UILabel {
         
         // 2.绘制字形
         // 需要绘制的范围
-        layoutManager.drawGlyphsForGlyphRange(NSRange(location: 0, length: textStorage.length), atPoint: CGPointZero)
+        let range = NSRange(location: 0, length: textStorage.length)
+        layoutManager.drawGlyphsForGlyphRange(range, atPoint: CGPointZero)
     }
 }
 
@@ -122,6 +123,9 @@ extension HYLabel {
         
         // 3.让label可以和用户交互
         userInteractionEnabled = true
+        
+        // 4.设置间距为0
+        textContainer.lineFragmentPadding = 0
     }
     
     /// 准备文本
@@ -136,8 +140,12 @@ extension HYLabel {
             attrString = NSAttributedString(string: "")
         }
         
+        selectedRange = nil
+        
         // 2.设置换行模型
         let attrStringM = addLineBreak(attrString!)
+        
+        attrStringM.addAttribute(NSFontAttributeName, value: font, range: NSRange(location: 0, length: attrStringM.length))
         
         // 3.设置textStorage的内容
         textStorage.setAttributedString(attrStringM)
@@ -255,7 +263,7 @@ extension HYLabel {
                 userTapHandler!(self, contentText, selectedRange!)
             }
         default:
-             break
+            break
         }
     }
     
