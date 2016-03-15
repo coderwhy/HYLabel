@@ -2,9 +2,12 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "group:HYLabel/HYLabel.xcodeproj">
+      location = "group:HYLabelDemo-Swift/HYLabelDemo-Swift.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:HYLabelDemo-Swift/HYLabelDemo-Swift.xcodeproj">
+      location = "group:HYLabelDemoOC/HYLabelDemoOC.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:HYLabel/HYLabel.xcodeproj">
    </FileRef>
 </Workspace>
