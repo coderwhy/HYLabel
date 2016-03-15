@@ -16,26 +16,26 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // 监听@谁谁谁的点击
-        demoLabel.userTapHandler = { (label, user, range) in
-            print(label)
-            print(user)
-            print(range)
-        }
-        
-        // 监听链接的点击
-        demoLabel.linkTapHandler = { (label, link, range) in
-            print(label)
-            print(link)
-            print(range)
-        }
-        
-        // 监听话题的点击
-        demoLabel.topicTapHandler = { (label, topic, range) in
-            print(label)
-            print(topic)
-            print(range)
-        }
+    // 监听@谁谁谁的点击
+    demoLabel.userTapHandler = { (label, user, range) in
+        print(label)
+        print(user)
+        print(range)
+    }
+    
+    // 监听链接的点击
+    demoLabel.linkTapHandler = { (label, link, range) in
+        print(label)
+        print(link)
+        print(range)
+    }
+    
+    // 监听话题的点击
+    demoLabel.topicTapHandler = { (label, topic, range) in
+        print(label)
+        print(topic)
+        print(range)
+    }
     }
     
     override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
