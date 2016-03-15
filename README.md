@@ -5,7 +5,7 @@
 ### 使用效果
 * 如图所示
 * 并且可以监听点击<br>
-* ![image](https://github.com/coderwhy/HYLabel/blob/master/ReadmeImage/Simulator%20Screen%20Shot%202016%E5%B9%B43%E6%9C%8815%E6%97%A5%20%E4%B8%8A%E5%8D%8811.29.11.png?raw=true)
+* ![image](https://raw.githubusercontent.com/coderwhy/HYLabel/master/ReadmeImage/image.png)
 
 
 ### 使用方式
