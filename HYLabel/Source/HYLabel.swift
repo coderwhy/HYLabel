@@ -43,6 +43,12 @@ public class HYLabel: UILabel {
         }
     }
     
+    public var matchTextColor : UIColor = UIColor(red: 87 / 255.0, green: 196 / 255.0, blue: 251 / 255.0, alpha: 1.0) {
+        didSet {
+            prepareText()
+        }
+    }
+    
     // 懒加载属性
     private lazy var textStorage : NSTextStorage = NSTextStorage() // NSMutableAttributeString的子类
     private lazy var layoutManager : NSLayoutManager = NSLayoutManager() // 布局管理者
@@ -154,7 +160,7 @@ extension HYLabel {
         if let linkRanges = getLinkRanges() {
             self.linkRanges = linkRanges
             for range in linkRanges {
-                textStorage.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor(), range: range)
+                textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
             }
         }
         
@@ -162,7 +168,7 @@ extension HYLabel {
         if let userRanges = getRanges("@[\\u4e00-\\u9fa5a-zA-Z0-9_-]*") {
             self.userRanges = userRanges
             for range in userRanges {
-                textStorage.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor(), range: range)
+                textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
             }
         }
         
@@ -171,7 +177,7 @@ extension HYLabel {
         if let topicRanges = getRanges("#.*?#") {
             self.topicRanges = topicRanges
             for range in topicRanges {
-                textStorage.addAttribute(NSForegroundColorAttributeName, value: UIColor.blueColor(), range: range)
+                textStorage.addAttribute(NSForegroundColorAttributeName, value: matchTextColor, range: range)
             }
         }
         
