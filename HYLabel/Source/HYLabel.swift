@@ -198,12 +198,16 @@ extension HYLabel {
     }
     
     private func getLinkRanges() -> [NSRange]? {
-        // 创建正则表达式
-        guard let detector = try? NSDataDetector(types: NSTextCheckingType.Link.rawValue) else {
+        // 创建正则表达式  匹配URL
+        let pattern = "((http|ftp|https)://)(([a-zA-Z0-9\\._-]+\\.[a-zA-Z]{2,6})|([0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}\\.[0-9]{1,3}))(:[0-9]{1,4})*(/[a-zA-Z0-9\\&%_\\./-~-]*)?"
+        
+        guard let regex = try? NSRegularExpression(pattern: pattern, options: []) else {
             return nil
         }
         
-        return getRangesFromResult(detector)
+
+        
+        return getRangesFromResult(regex)
     }
     
     private func getRangesFromResult(regex : NSRegularExpression) -> [NSRange] {
